@@ -1,0 +1,39 @@
+body{
+    background-color: rgb(161, 141, 141);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+li{
+    list-style-type: none;
+}
+
+/* Header */
+#mainHeader{
+    text-align: center;
+}
+
+/* Container */
+.container{
+    width: 40%;
+    margin: auto;
+}
+
+#items{
+    padding-left: 0px;
+}
+
+.list-group-collection{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-top: 3px;
+}
+
+.list-group-item{
+    border: 1px solid;
+    padding: 5px;
+}
+
+.data{
+    text-align: center;
+    /* background-color: rgb(161, 141, 141); */
+}
