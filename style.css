@@ -1,5 +1,5 @@
 body{
-    background-color: rgb(161, 141, 141);
+    background-color: #c0dcff;
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -8,15 +8,38 @@ li{
 }
 
 /* Header */
-#mainHeader{
+#mainHeader .container{
     text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
+
+#companyCount{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}
+
+#companyCount h2{
+    margin: 0px;
+    padding: 0px;
+}
+
+#companyCount h1{
+    margin: 0px;
+    padding: 0px;
+}
+
 
 /* Container */
 .container{
-    width: 40%;
+    width: 600px;
     margin: auto;
 }
+
+#items-header{
+    padding-left: 0px;
+}
+
 
 #items{
     padding-left: 0px;
@@ -26,11 +49,18 @@ li{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     margin-top: 3px;
+    border: 3px solid;
+    border-radius: 5px;
+    background-color: #80aee6;
 }
 
 .list-group-item{
-    border: 1px solid;
     padding: 5px;
+}
+
+.center{
+    border-left: 1px solid;
+    border-right: 1px solid;
 }
 
 .data{

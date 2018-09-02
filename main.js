@@ -171,44 +171,24 @@ function dynamicSort(property) {
 }
 
 // Sorting by "name","sector" or "symbol"
-function changeName(){
+function change(type){
     clear();
-    company.sort(dynamicSort("name"));
+    company.sort(dynamicSort(type));
     createList();
-    document.getElementById("name").style.background = "#f4f4f4";
-    document.getElementById("sector").style.background = "rgb(161, 141, 141)";
-    document.getElementById("symbol").style.background = "rgb(161, 141, 141)";
+    changeColor(type);
 }
 
-function changeSector(){
-    clear();
-    company.sort(dynamicSort("sector"));
-    createList();
-    document.getElementById("name").style.background = "rgb(161, 141, 141)";
-    document.getElementById("sector").style.background = "#f4f4f4";
-    document.getElementById("symbol").style.background = "rgb(161, 141, 141)";
-}
-
-function changeSymbol(){
-    clear();
-    company.sort(dynamicSort("symbol"));
-    createList();
+// Change color of the items header
+changeColor=(index)=>{
+    // First changes all to default color and last changes the color of the current
     document.getElementById("name").style.background = "rgb(161, 141, 141)";
     document.getElementById("sector").style.background = "rgb(161, 141, 141)";
-    document.getElementById("symbol").style.background = "#f4f4f4";
+    document.getElementById("symbol").style.background = "rgb(161, 141, 141)";
+    document.getElementById(index).style.background = "#f4f4f4";
 }
 
-// Default sort is by name
-company.sort(dynamicSort("name"));
-document.getElementById("name").style.background = "#f4f4f4";
-document.getElementById("sector").style.background = "rgb(161, 141, 141)";
-document.getElementById("symbol").style.background = "rgb(161, 141, 141)";
-
-// Clear list when list is sorted by another parameter
-function clear(){
-    var ul = document.getElementById("items");
-    while(ul.firstChild) ul.removeChild(ul.firstChild);
-}
+// Default sort is by name when the site is first opened
+change("name");
 
 // Creates list elements
 function createList(){
@@ -222,9 +202,9 @@ function createList(){
     var companySector = document.createTextNode(company[i].sector);
     var companySymbol = document.createTextNode(company[i].symbol);
     div.className='list-group-collection';
-    a.className='list-group-item';
-    b.className='list-group-item';
-    c.className='list-group-item';
+    a.className='list-group-item name';
+    b.className='list-group-item center sector';
+    c.className='list-group-item symbol';
     node.appendChild(div);
     div.appendChild(a);
     a.appendChild(companyName);
@@ -237,4 +217,18 @@ function createList(){
 
 createList();
 
+// Clears the list when list is sorted by another parameter
+//Otherwise the list appended
+function clear(){
+    var ul = document.getElementById("items");
+    while(ul.firstChild) ul.removeChild(ul.firstChild);
+}
 
+
+// Total companies count
+
+var companyCount = document.createTextNode(company.length);
+var d = document.createElement("h1");
+var headerNode= document.getElementById("companyCount");
+headerNode.appendChild(d);
+d.appendChild(companyCount);
