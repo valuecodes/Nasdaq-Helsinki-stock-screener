@@ -218,7 +218,6 @@ function createList(){
 createList();
 
 // Clears the list when list is sorted by another parameter
-//Otherwise the list appended
 function clear(){
     var ul = document.getElementById("items");
     while(ul.firstChild) ul.removeChild(ul.firstChild);
