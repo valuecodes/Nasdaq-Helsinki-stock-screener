@@ -1,3 +1,5 @@
+var filter=document.getElementById('filter');
+var itemList = document.getElementById('items');
 
 class Company{
     constructor(name,sector,symbol){
@@ -187,35 +189,34 @@ changeColor=(index)=>{
     document.getElementById(index).style.background = "#f4f4f4";
 }
 
-// Default sort is by name when the site is first opened
-change("name");
+
 
 // Creates list elements
 function createList(){
     for(var i=0;i<company.length;i++){
-    var div=document.createElement("div");
     var node = document.getElementById("items");
-    var a = document.createElement("li");
+    var a = document.createElement("div");
     var b = document.createElement("li");   
     var c = document.createElement("li");       
     var companyName = document.createTextNode(company[i].name);    
     var companySector = document.createTextNode(company[i].sector);
     var companySymbol = document.createTextNode(company[i].symbol);
-    div.className='list-group-collection';
-    a.className='list-group-item name';
+    a.className='list-name';
     b.className='list-group-item center sector';
     c.className='list-group-item symbol';
-    node.appendChild(div);
-    div.appendChild(a);
+    node.appendChild(a);
     a.appendChild(companyName);
-    div.appendChild(b);
+    a.appendChild(b);
     b.appendChild(companySector);
-    div.appendChild(c);
+    a.appendChild(c);
     c.appendChild(companySymbol);
     } 
 }
 
 createList();
+
+// Default sort is by name when the site is first opened
+change("name");
 
 // Clears the list when list is sorted by another parameter
 function clear(){
@@ -231,3 +232,28 @@ var d = document.createElement("h1");
 var headerNode= document.getElementById("companyCount");
 headerNode.appendChild(d);
 d.appendChild(companyCount);
+
+// Filter event
+filter.addEventListener('keyup',filterItems);
+
+// Filter Items
+
+function filterItems(e){
+    // convert text to lowercase
+    var text=e.target.value.toLowerCase();
+    // Get div
+    var items=itemList.getElementsByTagName('div');
+    console.log(items);
+    // Convert to an array
+    Array.from(items).forEach(function(item){
+        var itemName = item.firstChild.textContent;
+        if(itemName.toLowerCase().indexOf(text) != -1){
+            item.style.display='grid';
+        }else{
+            item.style.display='none';
+        }
+    });
+
+}
+
+    

@@ -24,13 +24,21 @@ li{
 #companyCount h2{
     margin: 0px;
     padding: 0px;
+    margin-top: 25px;
 }
 
 #companyCount h1{
     margin: 0px;
-    padding: 0px;
+    padding-top: 20px;
 }
 
+/* Filter */
+#filter{
+    height: 30px;
+    border-radius: 30px;
+    padding-left: 20px;
+    font-size: 19px;
+}
 
 /* Container */
 .container{
@@ -50,19 +58,30 @@ li{
 .list-group-collection{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    margin-top: 3px;
+    grid-gap: 2px;
+    height: 40px;
+}
+
+.list-name{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     border: 3px solid;
     border-radius: 5px;
-    background-color: #80aee6;
+    margin-top: 3px;
+    background-color: #86c3db;
+    padding-top: 10px;
+    padding-left: 5px;
 }
 
 .list-group-item{
-    padding: 5px;
+    padding-bottom: 5px;
+    
 }
 
-.center{
-    border-left: 1px solid;
-    border-right: 1px solid;
+.button{
+    border: 3px solid;
+    border-radius: 5px;
+    font-size: 20px;
 }
 
 .data{
@@ -78,7 +97,7 @@ li{
     height: 88px;
     position: absolute;
     left: 56.2%;
-    top: 32px;
+    top: 68px;
   }
   .lds-dual-ring:after {
     content: " ";

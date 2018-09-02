@@ -12,10 +12,12 @@
     <header id="mainHeader">
         <div class="container">
             <h1>OMX Helsinki</h1>
+            
             <div id="companyCount">
                 <h2>Total companies:</h2>
                 <div class="lds-dual-ring"></div> 
             </div>
+            <input type="text" id="filter" placeholder="Search companies...">
         </div>
     </header>
     <main>
@@ -24,9 +26,9 @@
                 
                 <ul id="items-header">
                       <div class="list-group-collection data">
-                    <button id="name" onclick="change('name')" class="list-group-item name">Name</button>
-                    <button id="sector" onclick="change('sector')" class="list-group-item sector">Sector</button>
-                    <button id="symbol" onclick="change('symbol')" class="list-group-item symbol">Symbol</button>
+                    <button class="button" id="name" onclick="change('name')" class="list-group-item name">Name</button>
+                    <button class="button" id="sector" onclick="change('sector')" class="list-group-item sector">Sector</button>
+                    <button class="button" id="symbol" onclick="change('symbol')" class="list-group-item symbol">Symbol</button>
                 </div>  
                 <ul id="items">
 
