@@ -26,6 +26,7 @@ li{
 #nav-bar{
     display: grid;
     grid-auto-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1px;
 }
 
 #nav-bar h1{
@@ -35,10 +36,11 @@ li{
 
 }
 
-#companyCount h2{
+#nav-bar h2{
+    position: relative;
     margin: 0px;
     padding: 0px;
-    margin-top: 25px;
+    right:50px;
 }
 
 #top-nav{
@@ -62,20 +64,36 @@ li{
     position: relative;
     display: grid;
     /* Change this */
-    height: 150px; 
+    height: 50px; 
     grid-template-columns: 1fr 1fr;
     /* and this */
-    top: -10px;
+    top: -200px;
     padding-bottom: 0;
     margin-bottom: 0px;
+    transition: 0.5s;
+
 }
 
 #sectorCount p{
     padding: 0;
     /* Margin */
     margin: 0px;
+    text-align: left;
+    padding-right: 20px;
+    margin-left: 35px;
+    color: white;
 }
 
+#totalCount{
+    height: 20px;
+    top: -100px;
+    transition: 0.5s;
+    color: white;
+}
+#totalCount h2{
+    padding-top: 5px;
+    padding-left: 46px;
+}
 
 /* Filter */
 #filter{
@@ -137,39 +155,5 @@ li{
     /* background-color: rgb(161, 141, 141); */
 }
 
-/* Spinner */
 
-.lds-dual-ring {
-    display: inline-block;
-    width: 88px;
-    height: 88px;
-    position: absolute;
-    left: 56.2%;
-    top: 28px;
-  }
-  .lds-dual-ring:after {
-    content: " ";
-    display: block;
-    width: 56px;
-    height: 56px;
-    margin: 1px;
-    border-radius: 50%;
-    border: 5px solid #fff;
-    border-color: #fff transparent #fff transparent;
-    animation: lds-dual-ring 1.2s linear infinite;
-  }
-  @keyframes lds-dual-ring {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  }
-
-@media(max-width:1800px){
-      .lds-dual-ring:after {
-        visibility: hidden;
-      }
-}
-
+  

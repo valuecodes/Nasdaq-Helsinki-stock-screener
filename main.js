@@ -233,11 +233,12 @@ function clear(){
 
 // Total companies count
 
-// var companyCount = document.createTextNode(company.length);
-// var d = document.createElement("h1");
-// var headerNode= document.getElementById("companyCount");
-// headerNode.appendChild(d);
-// d.appendChild(companyCount);
+var companyCount = document.createTextNode(company.length);
+var d = document.createElement("h2");
+var headerNode= document.getElementById("totalCount");
+d.classList='countNum'
+headerNode.appendChild(d);
+d.appendChild(companyCount);
 
 // Filter event
 filter.addEventListener('keyup',filterItems);
@@ -326,11 +327,25 @@ function createSectorList(sectorTotal){
 }
 sectorTotal.sort(dynamicSort('total'));
 createSectorList(sectorTotal);
-console.log(sectorTotal);
 
+// Top bar animation
 
+let open=true;
 
+function openSlideMenu(){
+    if(document.getElementById('sectorCount').style.top=='0px'){
+        document.getElementById('sectorCount').style.top='-200px';
+        document.getElementById('sectorCount').style.height='50px';
+        document.getElementById('totalCount').style.top='-100px';
 
+    }else{
+        document.getElementById('sectorCount').style.top='0px';
+        document.getElementById('sectorCount').style.height='190px';
+        document.getElementById('totalCount').style.top='0px';
+    }
+    
+    
+}
 
 
 
