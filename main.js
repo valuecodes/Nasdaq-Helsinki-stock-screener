@@ -227,11 +227,11 @@ function clear(){
 
 // Total companies count
 
-var companyCount = document.createTextNode(company.length);
-var d = document.createElement("h1");
-var headerNode= document.getElementById("companyCount");
-headerNode.appendChild(d);
-d.appendChild(companyCount);
+// var companyCount = document.createTextNode(company.length);
+// var d = document.createElement("h1");
+// var headerNode= document.getElementById("companyCount");
+// headerNode.appendChild(d);
+// d.appendChild(companyCount);
 
 // Filter event
 filter.addEventListener('keyup',filterItems);
@@ -256,4 +256,22 @@ function filterItems(e){
 
 }
 
-    
+
+// Clock
+timer();
+
+function timer(){
+    var currentTime = new Date()
+    var hours = currentTime.getHours()
+    var minutes = currentTime.getMinutes()
+    var sec = currentTime.getSeconds()
+    if (minutes < 10){
+        minutes = "0" + minutes
+    }   
+    if (sec < 10){
+        sec = "0" + sec
+    }
+    var t_str = hours + ":" + minutes + ":" + sec + " ";
+    document.getElementById('time_span').innerHTML = t_str;
+    setTimeout(timer,1000);
+}

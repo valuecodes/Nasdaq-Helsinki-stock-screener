@@ -12,13 +12,27 @@ li{
 #mainHeader .container{
     text-align: center;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 35px;
     color: #86c3db;
 }
 
-#companyCount{
+#time_span{
+    margin: 0px;
+    padding: 0px;
+    height: 20px;
+    text-align: center;
+}
+
+#nav-bar{
     display: grid;
-    grid-template-rows: 1fr 1fr;
+    grid-auto-rows: 1fr 1fr 1fr;
+}
+
+#nav-bar h1{
+    padding: 0px;
+    margin: 0px;
+    text-align: left;
+
 }
 
 #companyCount h2{
@@ -27,10 +41,41 @@ li{
     margin-top: 25px;
 }
 
+#top-nav{
+    overflow:hidden;
+    height: 40px;
+    padding-top: 10px;
+    position: relative;
+    /* always on top */
+    z-index: 1; 
+    /* background-color: #111; */
+    opacity: 0.9;
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+
 #companyCount h1{
     margin: 0px;
-    padding-top: 20px;
 }
+
+#sectorCount{
+    position: relative;
+    display: grid;
+    /* Change this */
+    height: 150px; 
+    grid-template-columns: 1fr 1fr;
+    /* and this */
+    top: -100px;
+    padding-bottom: 0;
+    margin-bottom: 0px;
+}
+
+#sectorCount p{
+    padding: 0;
+    /* Margin */
+    margin: 0px;
+}
+
 
 /* Filter */
 #filter{
@@ -38,6 +83,7 @@ li{
     border-radius: 30px;
     padding-left: 20px;
     font-size: 19px;
+    margin-top: 20px;
 }
 
 /* Container */
@@ -48,6 +94,8 @@ li{
 
 #items-header{
     padding-left: 0px;
+    padding-top: 0px;
+    margin-top: 0px;
 }
 
 
@@ -97,7 +145,7 @@ li{
     height: 88px;
     position: absolute;
     left: 56.2%;
-    top: 68px;
+    top: 28px;
   }
   .lds-dual-ring:after {
     content: " ";
