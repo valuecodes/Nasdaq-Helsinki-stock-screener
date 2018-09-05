@@ -162,6 +162,12 @@ for(var i=0;i<companyData.length;i++){
 // Sorting Function
 function dynamicSort(property) {
     var sortOrder = 1;
+    
+    // For sectorCount sort
+    if(property=='total'){
+        sortOrder=-1;
+    }
+
     if(property[0] === "-") {
         sortOrder = -1;
         property = property.substr(1);
@@ -275,3 +281,66 @@ function timer(){
     document.getElementById('time_span').innerHTML = t_str;
     setTimeout(timer,1000);
 }
+
+// Create sector count
+function getSectorCount(){
+    let sectorCount= new Array();
+    let sectorTotal=[];
+    for(var i=0;i<company.length;i++){
+        if(sectorCount.includes(company[i].sector)==false){
+            sectorCount.push(company[i].sector);
+        }
+    }
+
+    for(let i=0;i<sectorCount.length;i++){
+        let obj={sectorName:sectorCount[i],total:0};
+        sectorTotal.push(obj);
+    }
+
+    for(let i=0;i<company.length;i++){
+        for(let j=0;j<sectorTotal.length;j++){
+            if(company[i].sector===sectorTotal[j].sectorName){
+                sectorTotal[j].total++;
+            }
+        }
+    }
+
+    return sectorTotal;
+}
+
+let sectorTotal=getSectorCount();
+
+function createSectorList(sectorTotal){
+    for(var i=0;i<sectorTotal.length;i++){
+
+        var node=document.getElementById('sectorCount');
+        var p=document.createElement('p');
+        var c=document.createElement('p');
+        var text=document.createTextNode(sectorTotal[i].sectorName);
+        var textC=document.createTextNode(sectorTotal[i].total);
+        node.appendChild(p);
+        p.appendChild(text);
+        node.appendChild(c);
+        c.appendChild(textC);
+    }
+}
+sectorTotal.sort(dynamicSort('total'));
+createSectorList(sectorTotal);
+console.log(sectorTotal);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

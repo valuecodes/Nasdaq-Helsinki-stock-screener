@@ -65,7 +65,7 @@ li{
     height: 150px; 
     grid-template-columns: 1fr 1fr;
     /* and this */
-    top: -100px;
+    top: -10px;
     padding-bottom: 0;
     margin-bottom: 0px;
 }
