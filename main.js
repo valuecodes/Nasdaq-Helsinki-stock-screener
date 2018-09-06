@@ -352,10 +352,3 @@ function openSlideMenu(){
 
 
 
-
-
-
-
-
-
-
